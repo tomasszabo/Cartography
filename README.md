@@ -7,8 +7,7 @@ iOS/tvOS 15 and macOS 12 minimums. Layout operations use main-actor default
 isolation because they create and modify UIKit/AppKit constraints.
 Existing declarative constraint APIs are preserved; call them on the main actor.
 
-Install `https://github.com/tomasszabo/Cartography.git` from `master` after the
-migration PR merges (use `modernization/swift6` during review), selecting the
+Install `https://github.com/tomasszabo/Cartography.git` from `master`, selecting the
 `Cartography` product. `swift test` checks constraint activation/replacement/clear.
 
 <a href="https://travis-ci.org/robb/Cartography?branch=master">

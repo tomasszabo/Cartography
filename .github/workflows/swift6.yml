@@ -1,0 +1,21 @@
+name: Swift 6
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: macos-26
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@v4
+      - run: swift test
+      - name: Build Apple platforms
+        run: |
+          set -eu
+          for platform in iOS tvOS; do
+            xcodebuild -project Cartography.xcodeproj \
+              -scheme "Cartography-$platform" -configuration Release \
+              -destination "generic/platform=$platform Simulator" \
+              -derivedDataPath .build/Apple CODE_SIGNING_ALLOWED=NO build
+          done

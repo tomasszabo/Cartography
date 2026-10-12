@@ -12,12 +12,14 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "Robert Böhnke" => "robb@robb.is" }
 
-  s.swift_version = "5.0"
+  s.swift_version = "6.0"
+  s.pod_target_xcconfig = { 'SWIFT_DEFAULT_ACTOR_ISOLATION' => 'MainActor',
+                           'SWIFT_STRICT_CONCURRENCY' => 'complete' }
 
-  s.ios.deployment_target = "8.0"
-  s.osx.deployment_target = "10.10"
-  s.tvos.deployment_target = "9.0"
+  s.ios.deployment_target = "15.0"
+  s.osx.deployment_target = "12.0"
+  s.tvos.deployment_target = "15.0"
 
-  s.source = { :git => "https://github.com/robb/Cartography.git", :tag => s.version }
+  s.source = { :git => "https://github.com/tomasszabo/Cartography.git", :branch => "master" }
   s.source_files = "Cartography/*.swift"
 end
