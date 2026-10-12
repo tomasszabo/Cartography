@@ -1,5 +1,16 @@
 # Cartography :iphone::triangular_ruler:
 
+## Swift 6 fork
+
+This fork's SPM package uses tools 6.2 and actual Swift 6 language mode, with
+iOS/tvOS 15 and macOS 12 minimums. Layout operations use main-actor default
+isolation because they create and modify UIKit/AppKit constraints.
+Existing declarative constraint APIs are preserved; call them on the main actor.
+
+Install `https://github.com/tomasszabo/Cartography.git` from `master` after the
+migration PR merges (use `modernization/swift6` during review), selecting the
+`Cartography` product. `swift test` checks constraint activation/replacement/clear.
+
 <a href="https://travis-ci.org/robb/Cartography?branch=master">
     <img src="https://travis-ci.org/robb/Cartography.svg?branch=master" hspace="6px" align="right" vspace="2px">
 </a>

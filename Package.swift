@@ -1,16 +1,21 @@
-// swift-tools-version:4.2
+// swift-tools-version:6.2
 import PackageDescription
 
 let package = Package(
     name: "Cartography",
-    // platforms: [.iOS("8.0"), .macOS("10.10"), tvOS("9.0"), .watchOS("2.0")],
+    platforms: [.iOS(.v15), .macOS(.v12), .tvOS(.v15)],
     products: [
         .library(name: "Cartography", targets: ["Cartography"])
     ],
     targets: [
         .target(
             name: "Cartography",
-            path: "Cartography"
-        )
-    ]
+            path: "Cartography",
+            exclude: ["Info.plist"],
+            swiftSettings: [.defaultIsolation(MainActor.self)]
+        ),
+        .testTarget(name: "CartographyPackageTests", dependencies: ["Cartography"],
+                    path: "PackageTests")
+    ],
+    swiftLanguageModes: [.v6]
 )
