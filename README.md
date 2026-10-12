@@ -54,7 +54,7 @@ To integrate Cartography into your Xcode project using CocoaPods, specify it in 
 
 ```ruby
 target '<Your Target Name>' do
-  pod 'Cartography', '~> 3.0'
+  pod 'Cartography', :git => 'https://github.com/tomasszabo/Cartography.git', :branch => 'master'
 end
 ```
 
@@ -264,11 +264,9 @@ If you're using it with Xcode 10.3 or earlier, you can still use it as it is, wi
 
 ## Versioning
 
-For *Swift 3.x*: Versions <= 1.1.0
-
-For *Swift 4.x*: Versions >= 2.0.0
-
-For *Swift 5.x*: Versions >= 4.0.0
+This fork's `master` uses Swift 6 language mode and requires Swift tools 6.2+.
+Historical upstream tags predate this migration; install the fork from master
+rather than choosing an old tag by Swift version.
 
 ## Support
 
