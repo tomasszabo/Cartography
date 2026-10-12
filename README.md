@@ -1,5 +1,15 @@
 # Cartography :iphone::triangular_ruler:
 
+## Swift 6 fork
+
+This fork's SPM package uses tools 6.2 and actual Swift 6 language mode, with
+iOS/tvOS 15 and macOS 12 minimums. Layout operations use main-actor default
+isolation because they create and modify UIKit/AppKit constraints.
+Existing declarative constraint APIs are preserved; call them on the main actor.
+
+Install `https://github.com/tomasszabo/Cartography.git` from `master`, selecting the
+`Cartography` product. `swift test` checks constraint activation/replacement/clear.
+
 <a href="https://travis-ci.org/robb/Cartography?branch=master">
     <img src="https://travis-ci.org/robb/Cartography.svg?branch=master" hspace="6px" align="right" vspace="2px">
 </a>
@@ -44,7 +54,7 @@ To integrate Cartography into your Xcode project using CocoaPods, specify it in 
 
 ```ruby
 target '<Your Target Name>' do
-  pod 'Cartography', '~> 3.0'
+  pod 'Cartography', :git => 'https://github.com/tomasszabo/Cartography.git', :branch => 'master'
 end
 ```
 
@@ -254,11 +264,9 @@ If you're using it with Xcode 10.3 or earlier, you can still use it as it is, wi
 
 ## Versioning
 
-For *Swift 3.x*: Versions <= 1.1.0
-
-For *Swift 4.x*: Versions >= 2.0.0
-
-For *Swift 5.x*: Versions >= 4.0.0
+This fork's `master` uses Swift 6 language mode and requires Swift tools 6.2+.
+Historical upstream tags predate this migration; install the fork from master
+rather than choosing an old tag by Swift version.
 
 ## Support
 
