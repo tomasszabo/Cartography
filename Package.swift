@@ -14,7 +14,7 @@ let package = Package(
             exclude: ["Info.plist"],
             swiftSettings: [.defaultIsolation(MainActor.self)]
         ),
-        .testTarget(name: "CartographyPackageTests", dependencies: ["Cartography"],
+        .testTarget(name: "CartographyTests", dependencies: ["Cartography"],
                     path: "PackageTests")
     ],
     swiftLanguageModes: [.v6]
